@@ -5,7 +5,7 @@ ruby '3.4.4'
 
 gem 'rails', '~> 7.1.0'           # Web framework
 gem 'pg', '~> 1.1'               # PostgreSQL database adapter
-gem 'puma', '~> 5.0'             # Web server
+gem 'puma', '~> 6.0'             # Web server
 gem 'jbuilder', '~> 2.7'         # JSON API responses
 gem 'bootsnap', '>= 1.4.4', require: false  # Faster boot times
 gem 'rack-cors'                  # Cross-origin requests for React frontend
