@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# mise description="Create databases"
+
+set -e
+
+echo "🗄️ Creating databases..."
+bundle exec rails db:create
+echo "✅ Databases created successfully"

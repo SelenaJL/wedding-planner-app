@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# mise description="Run database migrations"
+
+set -e
+
+echo "🗄️ Running database migrations..."
+bundle exec rails db:migrate
+echo "✅ Migrations completed successfully"

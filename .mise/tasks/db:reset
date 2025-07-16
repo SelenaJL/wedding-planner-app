@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# mise description="Reset database with seed data"
+
+set -e
+
+echo "🗄️ Resetting database..."
+bundle exec rails db:drop db:create db:migrate
+
+if [ -f "db/seeds.rb" ]; then
+    echo "🌱 Running seed data..."
+    bundle exec rails db:seed
+fi
+
+echo "✅ Database reset completed successfully"

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# mise description="Start Rails development server"
+
+set -e
+
+echo "🚀 Starting Rails server on port 4000..."
+echo "   Frontend (React): http://localhost:3000"
+echo "   Backend (Rails):  http://localhost:4000"
+echo ""
+echo "Press Ctrl+C to stop the server"
+
+bundle exec rails server -p 4000

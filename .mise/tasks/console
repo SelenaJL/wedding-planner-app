@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# mise description="Open Rails console"
+
+set -e
+
+echo "🚀 Opening Rails console..."
+bundle exec rails console
