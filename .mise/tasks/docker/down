@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# mise description="Stop Docker containers"
+
+set -e
+
+# Set up Docker context for Colima
+export DOCKER_HOST="unix://$HOME/.config/colima/default/docker.sock"
+
+echo "🐳 Stopping Docker containers..."
+/opt/homebrew/bin/docker compose down
