@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# mise description="Start app with Docker Compose"
+
+set -e
+
+# Set up Docker context for Colima
+export DOCKER_HOST="unix://$HOME/.config/colima/default/docker.sock"
+
+echo "🐳 Starting wedding planner app with Docker..."
+echo "   Backend: http://localhost:4000"
+echo "   Database: PostgreSQL on port 5432"
+echo ""
+
+/opt/homebrew/bin/docker compose up

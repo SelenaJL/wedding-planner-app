@@ -43,9 +43,29 @@ Some future tools might include:
 
 ## Development Setup
 
-This project uses [mise](https://mise.jdx.dev/) for simplified development workflows. All commands are cross-platform and handle dependencies automatically.
+This project supports two development approaches:
 
-### Quick Start
+1. **Docker** (recommended) - Consistent environment, no local dependencies
+2. **Native** - Faster iteration, uses [mise](https://mise.jdx.dev/) for setup
+
+### Option 1: Docker Setup (Recommended)
+
+**Requirements:** Docker and Docker Compose
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd wedding-planner-app
+
+# Start everything with Docker
+mise run docker:up
+```
+
+The Rails API will run on `http://localhost:4000`
+
+### Option 2: Native Setup
+
+**Requirements:** Ruby 3.4.4, PostgreSQL, [mise](https://mise.jdx.dev/)
 
 ```bash
 # Clone the repository
@@ -59,17 +79,21 @@ mise run setup
 mise run start
 ```
 
-The Rails API will run on `http://localhost:4000` by default
-
 ### Available Commands
 
-**Development:**
+**Docker Development:**
+
+- `mise run docker:up` - Start Rails + PostgreSQL with Docker
+- `mise run docker:down` - Stop all Docker containers
+- `mise run docker:logs` - View container logs
+
+**Native Development:**
 
 - `mise run start` - Start Rails development server on port 4000
 - `mise run console` - Open Rails console for debugging
 - `mise run test` - Run the full test suite
 
-**Database:**
+**Database (Native only):**
 
 - `mise run db:create` - Create development and test databases
 - `mise run db:migrate` - Run pending database migrations
@@ -78,11 +102,24 @@ The Rails API will run on `http://localhost:4000` by default
 
 **Setup:**
 
-- `mise run setup` - Complete development environment setup
+- `mise run setup` - Complete native development environment setup
 
 **List available tasks:**
 
 - `mise task` - Show all available tasks with descriptions
+
+### Docker vs Native Development
+
+**Use Docker when:**
+- Setting up on a new machine
+- Working with teammates on different OS
+- Want guaranteed consistent environment
+- Preparing for deployment
+
+**Use Native when:**
+- Faster development iteration
+- Need to debug with external tools
+- Comfortable managing local dependencies
 
 ### Tech Stack
 
